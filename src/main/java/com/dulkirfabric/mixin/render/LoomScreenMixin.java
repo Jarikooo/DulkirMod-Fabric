@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class LoomScreenMixin {
 
     @Inject(
-            method = "renderBannerOnButton",
+            method = "extractBannerOnButton",
             at = @At(
                     value = "INVOKE",
                     target = "Lorg/joml/Matrix3x2fStack;pushMatrix()Lorg/joml/Matrix3x2fStack;",

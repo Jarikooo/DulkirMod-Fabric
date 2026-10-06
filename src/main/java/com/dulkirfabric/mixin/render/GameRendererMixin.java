@@ -20,10 +20,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class GameRendererMixin {
 
     @WrapOperation(
-            method = "render",
+            method = {"render", "extractGui"},
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/gui/screens/Screen;renderWithTooltipAndSubtitles" +
+                    target = "Lnet/minecraft/client/gui/screens/Screen;extractRenderStateWithTooltipAndSubtitles" +
                             "(Lnet/minecraft/client/gui/GuiGraphicsExtractor;IIF)V"
             )
     )

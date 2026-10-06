@@ -27,7 +27,7 @@ public class JarvisUtil {
     ) {
         var tl = g.pose().transformPosition(new Vector2f(l, t));
         var br = g.pose().transformPosition(new Vector2f(r, b));
-        g.submitOutline((int) (tl.x), (int) (tl.y), (int) (br.x - tl.x), (int) (br.y - tl.y), col);
+        g.outline((int) (tl.x), (int) (tl.y), (int) (br.x - tl.x), (int) (br.y - tl.y), col);
     }
 
     public static Color lerpColor(Color startC, Color endC, double progress) {

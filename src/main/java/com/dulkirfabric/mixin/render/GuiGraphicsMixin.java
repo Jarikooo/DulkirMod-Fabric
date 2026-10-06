@@ -31,7 +31,7 @@ public class GuiGraphicsMixin {
     private Matrix3x2fStack pose;
 
     @WrapOperation(
-            method = "renderTooltip",
+            method = "tooltip",
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;" +
@@ -68,7 +68,7 @@ public class GuiGraphicsMixin {
     }
 
     @Inject(
-            method = "renderTooltip",
+            method = "tooltip",
             at = @At(
                     value = "INVOKE",
                     target = "Lorg/joml/Matrix3x2fStack;pushMatrix()Lorg/joml/Matrix3x2fStack;",

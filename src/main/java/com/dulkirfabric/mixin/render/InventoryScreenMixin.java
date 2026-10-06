@@ -19,7 +19,7 @@ public class InventoryScreenMixin {
      * guide for how to implement this yourself - this entire feature is tech debt and terrible injections.
      */
     @WrapMethod(
-            method = "renderEntityInInventoryFollowsMouse"
+            method = "extractEntityInInventoryFollowsMouse"
     )
     private static void dulkir$drawEntity(GuiGraphicsExtractor guiGraphics, int x1, int y1, int x2, int y2, int size,
                                           float f, float mouseX, float mouseY, LivingEntity entity,

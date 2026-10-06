@@ -1,0 +1,14 @@
+net.minecraft.client.KeyboardHandler
+net.minecraft.client.MouseHandler
+net.minecraft.client.sounds.SoundEngine
+net.minecraft.client.renderer.entity.EntityRenderer
+net.minecraft.client.renderer.GameRenderer
+net.minecraft.client.gui.GuiGraphicsExtractor
+net.minecraft.client.gui.Gui
+net.minecraft.client.renderer.ItemInHandRenderer
+net.minecraft.world.entity.LivingEntity
+net.minecraft.client.gui.screens.inventory.LoomScreen
+net.minecraft.client.gui.screens.PauseScreen
+net.minecraft.client.gui.screens.Screen
+net.minecraft.client.gui.screens.inventory.EffectsInInventory
+net.minecraft.client.renderer.ScreenEffectRenderer

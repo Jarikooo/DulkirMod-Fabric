@@ -15,7 +15,7 @@ import java.util.Collection;
 public class EffectsInInventoryMixin {
 
     @Inject(
-            method = "renderEffects",
+            method = "extractEffects",
             at = @At("HEAD"),
             cancellable = true
     )

@@ -48,13 +48,13 @@ public class JarvisHudEditor extends Screen {
     }
 
     @Override
-    public void render(GuiGraphicsExtractor context, int mouseX, int mouseY, float delta) {
-        super.render(context, mouseX, mouseY, delta);
+    public void extractRenderState(GuiGraphicsExtractor context, int mouseX, int mouseY, float delta) {
+        super.extractRenderState(context, mouseX, mouseY, delta);
         assert minecraft != null;
-        context.drawCenteredString(minecraft.font,
+        context.centeredText(minecraft.font,
             Component.translatable("jarvis.editor.title").setStyle(Style.EMPTY.withColor(new Color(100, 200, 255, 255).getRGB())),
             width / 2, 20, -1);
-        context.drawCenteredString(minecraft.font,
+        context.centeredText(minecraft.font,
             Component.translatable("jarvis.editor.scaleBlurb").setStyle(Style.EMPTY.withColor(new Color(200, 200, 200, 255).getRGB())), width / 2, 35, -1);
 
 
@@ -73,7 +73,7 @@ public class JarvisHudEditor extends Screen {
             JarvisUtil.drawOutlineTrans(context, 0, 0, hud.getEffectiveWidth(), hud.getEffectiveHeight(),
                 hoverInterpolator.lerp(new Color(0xFF343738, true), new Color(0xFF85858A, true)).getRGB()
             );
-            context.drawCenteredString(minecraft.font, hud.getLabel(), hud.getEffectiveWidth() / 2, hud.getEffectiveHeight() / 2, -1);
+            context.centeredText(minecraft.font, hud.getLabel(), hud.getEffectiveWidth() / 2, hud.getEffectiveHeight() / 2, -1);
             context.pose().popMatrix();
         }
 

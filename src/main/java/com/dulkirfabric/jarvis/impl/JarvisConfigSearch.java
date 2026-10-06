@@ -44,9 +44,9 @@ public class JarvisConfigSearch extends Screen {
     }
 
     @Override
-    public void render(GuiGraphicsExtractor context, int mouseX, int mouseY, float delta) {
+    public void extractRenderState(GuiGraphicsExtractor context, int mouseX, int mouseY, float delta) {
         assert minecraft != null;
-        super.render(context, mouseX, mouseY, delta);
+        super.extractRenderState(context, mouseX, mouseY, delta);
         context.fill(0, 0, width, height, 0x50000000);
         context.enableScissor(0, 35, width, height);
         context.pose().pushMatrix();
@@ -62,12 +62,12 @@ public class JarvisConfigSearch extends Screen {
                 context.fill(0, 0, searchFieldWidth, height, 0x50A0A0A0);
             }
 
-            context.drawString(minecraft.font, Component.literal("")
+            context.text(minecraft.font, Component.literal("")
                 .append(container.getModName(filteredOption.plugin()))
                 .append(Component.literal(" > ")).append(filteredOption.option().title()), 2, 2, -1, false);
             int offset = 15;
             for (var descriptionLine : filteredOption.option().description()) {
-                context.drawString(minecraft.font, descriptionLine, 2, offset, 0xFF808080, true);
+                context.text(minecraft.font, descriptionLine, 2, offset, 0xFF808080, true);
                 offset += 10;
             }
             mouseY -= height;

@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class GuiMixin {
 
     @Inject(
-            method = "renderEffects",
+            method = "extractEffects",
             at = @At("HEAD"),
             cancellable = true
     )
@@ -32,7 +32,7 @@ public class GuiMixin {
             method = "displayScoreboardSidebar",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;drawString(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)V",
+                    target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;text(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)V",
                     ordinal = 2
             )
     )
@@ -42,7 +42,7 @@ public class GuiMixin {
     }
 
     @Inject(
-            method = "renderArmor",
+            method = "extractArmor",
             at = @At("HEAD"),
             cancellable = true
     )
@@ -53,7 +53,7 @@ public class GuiMixin {
     }
 
     @Inject(
-            method = "renderFood",
+            method = "extractFood",
             at = @At("HEAD"),
             cancellable = true
     )
@@ -64,7 +64,7 @@ public class GuiMixin {
     }
 
     @Inject(
-            method = "renderSelectedItemName",
+            method = "extractSelectedItemName",
             at = @At("HEAD"),
             cancellable = true
     )

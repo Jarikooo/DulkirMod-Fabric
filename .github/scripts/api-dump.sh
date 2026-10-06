@@ -15,3 +15,11 @@ grep -rhoE "^import (net\.minecraft|com\.mojang)[A-Za-z0-9_.]+" src | sed 's/^im
   echo "===== $c"
   javap -p -cp "$cp_jars" "$c" 2>&1 | head -400
 done > "$out/javap.txt"
+# bytecode call/field references for mixin target verification
+if [ -f .github/scripts/bytecode-classes.txt ]; then
+  grep -v '^#' .github/scripts/bytecode-classes.txt | while read -r c; do
+    [ -z "$c" ] && continue
+    echo "===== $c"
+    javap -c -p -cp "$cp_jars" "$c" 2>&1 | grep -E '^  [a-z].*\(.*\);$|^  [a-z].*\(.*\) *(throws.*)?;$|invoke|getfield|putfield|getstatic|putstatic' | sed -E 's/^ +[0-9]+: //'
+  done > "$out/bytecode.txt"
+fi
