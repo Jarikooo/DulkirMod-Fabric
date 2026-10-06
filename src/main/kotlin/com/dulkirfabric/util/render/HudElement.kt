@@ -2,7 +2,7 @@ package com.dulkirfabric.util.render
 
 import com.dulkirfabric.util.JarvisIntegrationPlugin
 import kotlinx.serialization.Serializable
-import moe.nea.jarvis.api.JarvisHud
+import com.dulkirfabric.jarvis.api.JarvisHud
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.Identifier
 import org.joml.Matrix3x2f

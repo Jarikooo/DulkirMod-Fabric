@@ -52,6 +52,9 @@ object DulkirModFabric {
 
 		DulkirConfig.loadConfig()
 
+		// Vendored Jarvis HUD editor (no Jarvis release exists for 26.1)
+		com.dulkirfabric.jarvis.JarvisBootstrap.init()
+
 	}
 
 }

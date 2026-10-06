@@ -2,10 +2,10 @@ package com.dulkirfabric.util
 
 import com.dulkirfabric.DulkirModFabric
 import com.dulkirfabric.config.DulkirConfig
-import moe.nea.jarvis.api.Jarvis
-import moe.nea.jarvis.api.JarvisConfigOption
-import moe.nea.jarvis.api.JarvisHud
-import moe.nea.jarvis.api.JarvisPlugin
+import com.dulkirfabric.jarvis.api.Jarvis
+import com.dulkirfabric.jarvis.api.JarvisConfigOption
+import com.dulkirfabric.jarvis.api.JarvisHud
+import com.dulkirfabric.jarvis.api.JarvisPlugin
 
 class JarvisIntegrationPlugin: JarvisPlugin {
 

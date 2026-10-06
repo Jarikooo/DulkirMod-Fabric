@@ -11,7 +11,7 @@
 	],
 	"contact": {
 		"homepage": "https://github.com/inglettronald",
-		"sources": "https://github.com/FabricMC/fabric-example-mod",
+		"sources": "https://github.com/inglettronald/DulkirMod-Fabric",
 		"issues": "https://discord.gg/juwhqyBCgA"
 	},
 	"license": "MPL-2.0",
@@ -21,7 +21,7 @@
 		"client": [
 			"com.dulkirfabric.DulkirModFabric::onInitializeClient"
 		],
-		"jarvis": [
+		"dulkir-jarvis": [
 			"com.dulkirfabric.util.JarvisIntegrationPlugin"
 		],
         "modmenu": [
@@ -32,11 +32,11 @@
 		"dulkirmod-fabric.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.14",
-		"minecraft": ">=1.21.5",
-		"java": ">=21",
-		"fabric-api": ">=0.124.2+1.21.5",
-		"fabric-language-kotlin": ">=1.13.3+kotlin.2.1.21"
+		"fabricloader": ">=0.18.4",
+		"minecraft": ">=26.1",
+		"java": ">=25",
+		"fabric-api": "*",
+		"fabric-language-kotlin": ">=1.13.6"
 	},
 	"suggests": {
 		"Farsight": "https://www.curseforge.com/minecraft/mc-mods/farsight-fabric/files",
