@@ -4,7 +4,7 @@ import com.dulkirfabric.jarvis.api.JarvisAnchor;
 import com.dulkirfabric.jarvis.api.JarvisHud;
 import com.dulkirfabric.jarvis.api.JarvisPlugin;
 import com.dulkirfabric.jarvis.api.Point;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.network.chat.Component;
@@ -48,7 +48,7 @@ public class JarvisHudEditor extends Screen {
     }
 
     @Override
-    public void render(GuiGraphics context, int mouseX, int mouseY, float delta) {
+    public void render(GuiGraphicsExtractor context, int mouseX, int mouseY, float delta) {
         super.render(context, mouseX, mouseY, delta);
         assert minecraft != null;
         context.drawCenteredString(minecraft.font,
@@ -85,7 +85,7 @@ public class JarvisHudEditor extends Screen {
         }
     }
 
-    public void fillFadeOut(GuiGraphics drawContext, int width, int height, float opaquePercentage) {
+    public void fillFadeOut(GuiGraphicsExtractor drawContext, int width, int height, float opaquePercentage) {
         drawContext.fill(0, 0, width, height, 0x80000000);
     }
 

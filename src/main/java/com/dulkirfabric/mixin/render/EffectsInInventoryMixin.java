@@ -1,7 +1,7 @@
 package com.dulkirfabric.mixin.render;
 
 import com.dulkirfabric.config.DulkirConfig;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.inventory.EffectsInInventory;
 import net.minecraft.world.effect.MobEffectInstance;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,7 +19,7 @@ public class EffectsInInventoryMixin {
             at = @At("HEAD"),
             cancellable = true
     )
-    private void dulkir$cancelEffects(GuiGraphics guiGraphics, Collection<MobEffectInstance> effects, int i, int j,
+    private void dulkir$cancelEffects(GuiGraphicsExtractor guiGraphics, Collection<MobEffectInstance> effects, int i, int j,
                                       int k, int l, int m, CallbackInfo ci) {
         if (DulkirConfig.ConfigVars.getConfigOptions().getStatusEffectHidden()) {
             ci.cancel();

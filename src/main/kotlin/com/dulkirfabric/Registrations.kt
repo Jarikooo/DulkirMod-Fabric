@@ -40,7 +40,7 @@ import net.fabricmc.fabric.api.client.screen.v1.ScreenMouseEvents
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLevelEvents
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.client.DeltaTracker
-import net.minecraft.client.gui.GuiGraphics
+import net.minecraft.client.gui.GuiGraphicsExtractor
 import net.minecraft.resources.Identifier
 
 /**
@@ -151,7 +151,7 @@ object Registrations {
 
         val id = Identifier.parse("dulkir_hud");
         val element = object : HudElement {
-            override fun render(guiGraphics: GuiGraphics, deltaTracker: DeltaTracker) {
+            override fun extractRenderState(guiGraphics: GuiGraphicsExtractor, deltaTracker: DeltaTracker) {
                 HudRenderEvent(guiGraphics, deltaTracker.getGameTimeDeltaPartialTick(true)).post()
             }
         }

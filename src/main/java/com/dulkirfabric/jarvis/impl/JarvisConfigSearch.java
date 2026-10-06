@@ -1,6 +1,6 @@
 package com.dulkirfabric.jarvis.impl;
 
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.input.CharacterEvent;
@@ -44,7 +44,7 @@ public class JarvisConfigSearch extends Screen {
     }
 
     @Override
-    public void render(GuiGraphics context, int mouseX, int mouseY, float delta) {
+    public void render(GuiGraphicsExtractor context, int mouseX, int mouseY, float delta) {
         assert minecraft != null;
         super.render(context, mouseX, mouseY, delta);
         context.fill(0, 0, width, height, 0x50000000);

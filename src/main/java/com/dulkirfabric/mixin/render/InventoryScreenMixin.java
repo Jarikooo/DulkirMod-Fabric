@@ -4,7 +4,7 @@ import com.dulkirfabric.DulkirModFabric;
 import com.dulkirfabric.features.InventoryScale;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,7 +21,7 @@ public class InventoryScreenMixin {
     @WrapMethod(
             method = "renderEntityInInventoryFollowsMouse"
     )
-    private static void dulkir$drawEntity(GuiGraphics guiGraphics, int x1, int y1, int x2, int y2, int size,
+    private static void dulkir$drawEntity(GuiGraphicsExtractor guiGraphics, int x1, int y1, int x2, int y2, int size,
                                           float f, float mouseX, float mouseY, LivingEntity entity,
                                           Operation<Void> original) {
         float newX, newY;

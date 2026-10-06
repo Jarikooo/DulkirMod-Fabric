@@ -1,6 +1,6 @@
 package com.dulkirfabric.jarvis.impl;
 
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 
@@ -23,7 +23,7 @@ public class JarvisUtil {
     }
 
     public static void drawOutlineTrans(
-        GuiGraphics g, int l, int t, int r, int b, int col
+        GuiGraphicsExtractor g, int l, int t, int r, int b, int col
     ) {
         var tl = g.pose().transformPosition(new Vector2f(l, t));
         var br = g.pose().transformPosition(new Vector2f(r, b));

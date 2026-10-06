@@ -1,7 +1,7 @@
 package com.dulkirfabric.mixin.render;
 
 import com.dulkirfabric.features.InventoryScale;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.inventory.LoomScreen;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,7 +20,7 @@ public class LoomScreenMixin {
                     shift = At.Shift.AFTER
             )
     )
-    public void onCreateMatrix(GuiGraphics context, int x, int y, TextureAtlasSprite sprite, CallbackInfo ci) {
+    public void onCreateMatrix(GuiGraphicsExtractor context, int x, int y, TextureAtlasSprite sprite, CallbackInfo ci) {
         context.pose().scale(InventoryScale.INSTANCE.getScale(), InventoryScale.INSTANCE.getScale());
     }
 
