@@ -1,0 +1,52 @@
+Fetching distribution.
+Downloading https://services.gradle.org/distributions/gradle-9.7.1-bin.zip
+..............10%..............20%...............30%..............40%...............50%..............60%...............70%..............80%..............90%...............100%
+
+Welcome to Gradle 9.7.1!
+
+Here are the highlights of this release:
+ - Isolated Projects graduates to incubating
+ - Broader Configuration Cache compatibility
+ - Resilient Sync helps you fix broken builds
+ - More source locations in problem reports
+
+For more details see https://docs.gradle.org/9.7.1/release-notes.html
+
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Configure project :
+Fabric Loom: 1.18.2
+
+> Task :checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :processResources
+> Task :processIncludeJars
+> Task :sourcesJar
+> Task :processTestResources NO-SOURCE
+> Task :validateAccessWidener
+> Task :compileKotlin
+w: file:///home/runner/work/DulkirMod-Fabric/DulkirMod-Fabric/src/main/kotlin/com/dulkirfabric/features/slayer/Vampire.kt:60:66 Elvis operator (?:) always returns the left operand of non-nullable type 'ItemStack'.
+w: file:///home/runner/work/DulkirMod-Fabric/DulkirMod-Fabric/src/main/kotlin/com/dulkirfabric/features/slayer/Vampire.kt:61:39 Elvis operator (?:) always returns the left operand of non-nullable type 'Item'.
+w: file:///home/runner/work/DulkirMod-Fabric/DulkirMod-Fabric/src/main/kotlin/com/dulkirfabric/hud/SpeedOverlay.kt:46:37 Elvis operator (?:) always returns the left operand of non-nullable type 'Vec3'.
+w: file:///home/runner/work/DulkirMod-Fabric/DulkirMod-Fabric/src/main/kotlin/com/dulkirfabric/util/Utils.kt:80:36 Unnecessary safe call on a non-null receiver of type 'DataComponentMap'.
+w: file:///home/runner/work/DulkirMod-Fabric/DulkirMod-Fabric/src/main/kotlin/com/dulkirfabric/util/Utils.kt:84:36 Unnecessary safe call on a non-null receiver of type 'DataComponentMap'.
+w: file:///home/runner/work/DulkirMod-Fabric/DulkirMod-Fabric/src/main/kotlin/com/dulkirfabric/util/render/WorldRenderUtils.kt:28:44 Elvis operator (?:) always returns the left operand of non-nullable type 'PoseStack'.
+w: file:///home/runner/work/DulkirMod-Fabric/DulkirMod-Fabric/src/main/kotlin/com/dulkirfabric/util/render/WorldRenderUtils.kt:95:44 Elvis operator (?:) always returns the left operand of non-nullable type 'PoseStack'.
+w: file:///home/runner/work/DulkirMod-Fabric/DulkirMod-Fabric/src/main/kotlin/com/dulkirfabric/util/render/WorldRenderUtils.kt:142:51 Elvis operator (?:) always returns the left operand of non-nullable type 'MultiBufferSource.BufferSource'.
+w: file:///home/runner/work/DulkirMod-Fabric/DulkirMod-Fabric/src/main/kotlin/com/dulkirfabric/util/render/WorldRenderUtils.kt:183:44 Elvis operator (?:) always returns the left operand of non-nullable type 'PoseStack'.
+
+> Task :compileJava
+> Task :classes
+> Task :jar
+> Task :assemble
+> Task :compileTestKotlin NO-SOURCE
+> Task :compileTestJava NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test NO-SOURCE
+> Task :check
+> Task :build
+
+[Incubating] Problems report is available at: file:///home/runner/work/DulkirMod-Fabric/DulkirMod-Fabric/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 1m 50s
+7 actionable tasks: 7 executed
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.7.1/userguide/configuration_cache_enabling.html

@@ -1,0 +1,4 @@
+/home/runner/.gradle/caches/fabric-loom/26.1.2/minecraft-merged.jar
+/home/runner/.gradle/caches/fabric-loom/26.1.2/minecraft-client.jar
+/home/runner/.gradle/caches/fabric-loom/minecraftMaven/net/minecraft/minecraft-merged-deobf/26.1.2/minecraft-merged-deobf-26.1.2.jar
+.gradle/loom-cache/minecraftMaven/net/minecraft/minecraft-merged-9542ec157a/26.1.2/minecraft-merged-9542ec157a-26.1.2.jar
