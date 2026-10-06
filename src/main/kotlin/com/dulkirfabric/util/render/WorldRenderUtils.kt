@@ -6,7 +6,7 @@ import com.mojang.blaze3d.vertex.PoseStack
 import net.fabricmc.fabric.api.client.rendering.v1.level.LevelRenderContext
 import net.minecraft.ChatFormatting
 import net.minecraft.client.gui.Font
-import net.minecraft.client.renderer.LightTexture
+import net.minecraft.util.LightCoordsUtil
 import net.minecraft.network.chat.Component
 import net.minecraft.world.phys.AABB
 import net.minecraft.world.phys.Vec3
@@ -125,16 +125,16 @@ object WorldRenderUtils {
         val matrix4f = matrices.last().pose()
         buf.addVertex(matrix4f, -1.0f - font.width(text) / 2, -1.0f, 0.0f)
             .setColor(j)
-            .setLight(LightTexture.FULL_BRIGHT)
+            .setLight(LightCoordsUtil.FULL_BRIGHT)
         buf.addVertex(matrix4f, -1.0f - font.width(text) / 2, font.lineHeight.toFloat(), 0.0f)
             .setColor(j)
-            .setLight(LightTexture.FULL_BRIGHT)
+            .setLight(LightCoordsUtil.FULL_BRIGHT)
         buf.addVertex(matrix4f, font.width(text).toFloat() / 2, font.lineHeight.toFloat(), 0.0f)
             .setColor(j)
-            .setLight(LightTexture.FULL_BRIGHT)
+            .setLight(LightCoordsUtil.FULL_BRIGHT)
         buf.addVertex(matrix4f, font.width(text).toFloat() / 2, -1.0f, 0.0f)
             .setColor(j)
-            .setLight(LightTexture.FULL_BRIGHT)
+            .setLight(LightCoordsUtil.FULL_BRIGHT)
 
         // Translate forward for text rendering
         matrices.translate(0F, 0F, 0.01F)
@@ -144,7 +144,7 @@ object WorldRenderUtils {
         font.drawInBatch(
             text, -font.width(text).toFloat() / 2, 0f, 0xFFFFFFFF.toInt(), false, textMatrix, bufferSource,
             Font.DisplayMode.SEE_THROUGH,
-            0, LightTexture.FULL_BRIGHT
+            0, LightCoordsUtil.FULL_BRIGHT
         )
 
         if (dist) {
@@ -153,7 +153,7 @@ object WorldRenderUtils {
             font.drawInBatch(
                 distText, -font.width(distText).toFloat() / 2, 10f, 0xFFFFFFFF.toInt(), false, textMatrix, bufferSource,
                 Font.DisplayMode.SEE_THROUGH,
-                0, LightTexture.FULL_BRIGHT
+                0, LightCoordsUtil.FULL_BRIGHT
             )
         }
 

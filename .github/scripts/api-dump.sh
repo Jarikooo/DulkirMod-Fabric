@@ -10,7 +10,7 @@ cp_jars=$(echo "$jar" | tr '\n' ':')
 for j in $jar; do unzip -Z1 "$j" | grep '\.class$' | sed 's/\.class$//; s#/#.#g'; done | sort -u > "$out/classes.txt"
 grep -rhoE "^import (net\.minecraft|com\.mojang)[A-Za-z0-9_.]+" src | sed 's/^import //' | sort -u > "$out/imports.txt"
 # also dump any extra classes requested in .github/scripts/extra-classes.txt
-cat "$out/imports.txt" .github/scripts/extra-classes.txt 2>/dev/null | sort -u | while read -r c; do
+{ cat "$out/imports.txt"; [ -f .github/scripts/extra-classes.txt ] && grep -v '^#' .github/scripts/extra-classes.txt | while read -r pat; do [ -n "$pat" ] && grep -E "^${pat}$" "$out/classes.txt"; done; } | sort -u | while read -r c; do
   [ -z "$c" ] && continue
   echo "===== $c"
   javap -p -cp "$cp_jars" "$c" 2>&1 | head -400

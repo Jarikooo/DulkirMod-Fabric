@@ -28,13 +28,13 @@ object SpeedOverlay {
         if (DulkirConfig.configOptions.speedHud) {
             pose.pushMatrix()
             speedHud.applyTransformations(pose)
-            context.drawString(mc.font, Component.literal(TablistUtils.persistentInfo.speed),0, 1, -1, true)
+            context.text(mc.font, Component.literal(TablistUtils.persistentInfo.speed),0, 1, -1, true)
             pose.popMatrix()
         }
         if (DulkirConfig.configOptions.speedBpsHud) {
             pose.pushMatrix()
             bpsOverlay.applyTransformations(pose)
-            context.drawString(mc.font, Component.literal("${"%.2f".format(tickMomentum)} BPS (speed)"),0, 1, -1, true)
+            context.text(mc.font, Component.literal("${"%.2f".format(tickMomentum)} BPS (speed)"),0, 1, -1, true)
             pose.popMatrix()
         }
     }

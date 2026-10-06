@@ -27,25 +27,25 @@ object ActionBarHudReplacements {
         val pose = context.pose()
         pose.pushMatrix()
         hpHud.applyTransformations(pose)
-        context.drawString(DulkirModFabric.mc.font, Component.literal(ActionBarUtil.healthStr),0, 1, -1, true)
+        context.text(DulkirModFabric.mc.font, Component.literal(ActionBarUtil.healthStr),0, 1, -1, true)
         pose.popMatrix()
 
         pose.pushMatrix()
         defHud.applyTransformations(pose)
-        context.drawString(DulkirModFabric.mc.font, Component.literal(ActionBarUtil.defStr),0, 1, -1, true)
+        context.text(DulkirModFabric.mc.font, Component.literal(ActionBarUtil.defStr),0, 1, -1, true)
         if (DulkirConfig.configOptions.showEHP) {
-            context.drawString(DulkirModFabric.mc.font, Component.literal(ActionBarUtil.ehp), 0, 1 + 12, -1, true)
+            context.text(DulkirModFabric.mc.font, Component.literal(ActionBarUtil.ehp), 0, 1 + 12, -1, true)
         }
         pose.popMatrix()
 
         pose.pushMatrix()
         stackHud.applyTransformations(pose)
-        context.drawString(DulkirModFabric.mc.font, Component.literal(ActionBarUtil.stacks),0, 1, -1, true)
+        context.text(DulkirModFabric.mc.font, Component.literal(ActionBarUtil.stacks),0, 1, -1, true)
         pose.popMatrix()
 
         pose.pushMatrix()
         manaHud.applyTransformations(pose)
-        context.drawString(DulkirModFabric.mc.font, Component.literal(ActionBarUtil.mana),0, 1, -1, true)
+        context.text(DulkirModFabric.mc.font, Component.literal(ActionBarUtil.mana),0, 1, -1, true)
         pose.popMatrix()
     }
 }

@@ -14,6 +14,7 @@
 package com.dulkirfabric
 
 import com.dulkirfabric.config.DulkirConfig
+import com.dulkirfabric.jarvis.JarvisBootstrap
 import com.llamalad7.mixinextras.MixinExtrasBootstrap
 import meteordevelopment.orbit.EventBus
 import net.minecraft.client.Minecraft
@@ -53,7 +54,7 @@ object DulkirModFabric {
 		DulkirConfig.loadConfig()
 
 		// Vendored Jarvis HUD editor (no Jarvis release exists for 26.1)
-		com.dulkirfabric.jarvis.JarvisBootstrap.init()
+		JarvisBootstrap.init()
 
 	}
 

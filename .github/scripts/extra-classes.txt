@@ -1,0 +1,9 @@
+# regexes matched against the full class list; matches get javap-dumped
+com\.mojang\.blaze3d\.pipeline\..*
+com\.mojang\.blaze3d\.platform\.(CompareOp|DepthTestFunction|PolygonMode|DestFactor|SourceFactor|LogicOp)
+net\.minecraft\.client\.gui\.components\.ChatComponent
+net\.minecraft\.client\.renderer\.(Lightmap|UiLightmap|ShapeRenderer|RenderPipelines|LevelRenderer|GameRenderer|SubmitNodeCollector|SubmitNodeStorage|MultiBufferSource.*)
+net\.minecraft\.client\.renderer\.rendertype\..*
+net\.minecraft\.client\.renderer\.state\.level\..*
+net\.minecraft\.util\.LightCoordsUtil
+net\.minecraft\.client\.gui\.Font(\$.*)?

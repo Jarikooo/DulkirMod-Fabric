@@ -20,7 +20,7 @@ object HudRenderUtil {
         matrices.pushMatrix()
         matrices.translate(mc.window.guiScaledWidth / 3f, mc.window.guiScaledHeight / 2f)
         matrices.scale(sf, sf)
-        context.drawString(font, content, 0, -font.lineHeight / 2, -1, true)
+        context.text(font, content, 0, -font.lineHeight / 2, -1, true)
         matrices.popMatrix()
     }
 

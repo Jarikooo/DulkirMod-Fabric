@@ -30,12 +30,12 @@ object Garden {
                 .withStyle(ChatFormatting.GREEN, ChatFormatting.BOLD)
                 .append(Component.literal(persistentInfo.numVisitors.toString())
                     .withStyle(ChatFormatting.GRAY))
-            context.drawString(mc.font, visitorText,0, 1, -1, true)
+            context.text(mc.font, visitorText,0, 1, -1, true)
             val nextVisitor = Component.literal("Next: ")
                 .withStyle(ChatFormatting.GOLD)
                 .append(Component.literal(persistentInfo.nextVisitorTime)
                     .withStyle(ChatFormatting.GRAY))
-            context.drawString(mc.font, nextVisitor,3, 11, -1, true)
+            context.text(mc.font, nextVisitor,3, 11, -1, true)
             pose.popMatrix()
         }
         if (DulkirConfig.configOptions.showComposterInfo) {
@@ -46,7 +46,7 @@ object Garden {
                 .withStyle(ChatFormatting.DARK_GREEN)
                 .append(Component.literal(persistentInfo.compostTime)
                     .withStyle(ChatFormatting.GRAY))
-            context.drawString(mc.font, composterText,0, 1, -1, true)
+            context.text(mc.font, composterText,0, 1, -1, true)
             pose.popMatrix()
         }
         var yaw = mc.player?.xRot ?: return
@@ -66,12 +66,12 @@ object Garden {
                 .withStyle(ChatFormatting.GOLD)
                 .append(Component.literal("%.2f".format(yaw))
                     .withStyle(ChatFormatting.GRAY))
-            context.drawString(mc.font, yawText,0, 1, -1, true)
+            context.text(mc.font, yawText,0, 1, -1, true)
             val pitchText = Component.literal("Pitch: ")
                 .withStyle(ChatFormatting.GOLD)
                 .append(Component.literal("%.2f".format(pitch))
                     .withStyle(ChatFormatting.GRAY))
-            context.drawString(mc.font, pitchText,0, 13, -1, true)
+            context.text(mc.font, pitchText,0, 13, -1, true)
             pose.popMatrix()
         }
     }
