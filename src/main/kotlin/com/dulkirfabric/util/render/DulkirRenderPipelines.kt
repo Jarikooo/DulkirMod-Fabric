@@ -2,7 +2,9 @@ package com.dulkirfabric.util.render
 
 import com.mojang.blaze3d.pipeline.BlendFunction
 import com.mojang.blaze3d.pipeline.RenderPipeline
-import com.mojang.blaze3d.platform.DepthTestFunction
+import com.mojang.blaze3d.pipeline.ColorTargetState
+import com.mojang.blaze3d.pipeline.DepthStencilState
+import com.mojang.blaze3d.platform.CompareOp
 import com.mojang.blaze3d.vertex.DefaultVertexFormat
 import com.mojang.blaze3d.vertex.VertexFormat
 import net.minecraft.client.renderer.RenderPipelines
@@ -14,9 +16,8 @@ object DulkirRenderPipelines {
             .withLocation("pipeline/line_strip")
             .withVertexFormat(DefaultVertexFormat.POSITION_COLOR_NORMAL, VertexFormat.Mode.DEBUG_LINE_STRIP)
             .withCull(false)
-            .withBlend(BlendFunction.TRANSLUCENT)
-            .withDepthWrite(true)
-            .withDepthTestFunction(DepthTestFunction.LEQUAL_DEPTH_TEST)
+            .withColorTargetState(ColorTargetState(BlendFunction.TRANSLUCENT))
+            .withDepthStencilState(DepthStencilState(CompareOp.LESS_THAN_OR_EQUAL, true))
             .build()
     )
 
@@ -26,9 +27,8 @@ object DulkirRenderPipelines {
             .withShaderDefine("shad")
             .withVertexFormat(DefaultVertexFormat.POSITION_COLOR_NORMAL, VertexFormat.Mode.DEBUG_LINE_STRIP)
             .withCull(false)
-            .withBlend(BlendFunction.TRANSLUCENT)
-            .withDepthWrite(false)
-            .withDepthTestFunction(DepthTestFunction.NO_DEPTH_TEST)
+            .withColorTargetState(ColorTargetState(BlendFunction.TRANSLUCENT))
+            .withDepthStencilState(DepthStencilState(CompareOp.ALWAYS_PASS, false))
             .build()
     )
 
@@ -37,9 +37,8 @@ object DulkirRenderPipelines {
             .withLocation("pipeline/debug_filled_box")
             .withCull(false)
             .withVertexFormat(DefaultVertexFormat.POSITION_COLOR, VertexFormat.Mode.TRIANGLE_STRIP)
-            .withDepthWrite(true)
-            .withDepthTestFunction(DepthTestFunction.LEQUAL_DEPTH_TEST)
-            .withBlend(BlendFunction.TRANSLUCENT)
+            .withDepthStencilState(DepthStencilState(CompareOp.LESS_THAN_OR_EQUAL, true))
+            .withColorTargetState(ColorTargetState(BlendFunction.TRANSLUCENT))
             .build()
     );
 
@@ -48,9 +47,8 @@ object DulkirRenderPipelines {
             .withLocation("pipeline/debug_filled_box")
             .withCull(false)
             .withVertexFormat(DefaultVertexFormat.POSITION_COLOR, VertexFormat.Mode.TRIANGLE_STRIP)
-            .withDepthWrite(false)
-            .withDepthTestFunction(DepthTestFunction.NO_DEPTH_TEST)
-            .withBlend(BlendFunction.TRANSLUCENT)
+            .withDepthStencilState(DepthStencilState(CompareOp.ALWAYS_PASS, false))
+            .withColorTargetState(ColorTargetState(BlendFunction.TRANSLUCENT))
             .build()
     );
 
@@ -59,9 +57,8 @@ object DulkirRenderPipelines {
             .withLocation("pipeline/debug_quads")
             .withCull(false)
             .withVertexFormat(DefaultVertexFormat.POSITION_COLOR, VertexFormat.Mode.QUADS)
-            .withDepthWrite(true)
-            .withDepthTestFunction(DepthTestFunction.LEQUAL_DEPTH_TEST)
-            .withBlend(BlendFunction.TRANSLUCENT)
+            .withDepthStencilState(DepthStencilState(CompareOp.LESS_THAN_OR_EQUAL, true))
+            .withColorTargetState(ColorTargetState(BlendFunction.TRANSLUCENT))
             .build()
     );
 
@@ -70,9 +67,8 @@ object DulkirRenderPipelines {
             .withLocation("pipeline/debug_quads")
             .withCull(false)
             .withVertexFormat(DefaultVertexFormat.POSITION_COLOR, VertexFormat.Mode.QUADS)
-            .withDepthWrite(false)
-            .withDepthTestFunction(DepthTestFunction.NO_DEPTH_TEST)
-            .withBlend(BlendFunction.TRANSLUCENT)
+            .withDepthStencilState(DepthStencilState(CompareOp.ALWAYS_PASS, false))
+            .withColorTargetState(ColorTargetState(BlendFunction.TRANSLUCENT))
             .build()
     );
 

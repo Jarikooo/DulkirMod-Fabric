@@ -10,7 +10,7 @@ object TextUtils {
         if (mc.player == null) return
 
         val textPrefix = if (prefix) "${CHAT_PREFIX} " else ""
-        mc.gui.chat.addMessage(Component.literal("$textPrefix$text§r"))
+        mc.gui.chat.addClientSystemMessage(Component.literal("$textPrefix$text§r"))
     }
 
     fun toggledMessage(message: String, state: Boolean) {
